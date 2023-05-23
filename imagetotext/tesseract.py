@@ -7,7 +7,7 @@ from PIL import Image
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 filename = 'C:\\Users\\JUNYEOP\\projects\\capstonedesign\\receipt_img\\costco.jpg'
 img_nparray=np.array(Image.open(filename))
-text=pytesseract.image_to_string(Image.open(filename), lang="kor")
+text=pytesseract.image_to_string(Image.open(filename), lang="kor+eng",config='-c preserve_interword_spaces=1 --psm 4')
 
 '''
 norm_img = np.zeros((img_nparray.shape[0],img_nparray.shape[1]))
